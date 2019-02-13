@@ -68,6 +68,12 @@ var getParallelCaps = function (lt_browsers, task_id) {
   if(givenCap['resolution']) {
     returnCap['resolution'] = givenCap['resolution'];
   }
+  if(givenCap['tunnel']) {
+    returnCap['tunnel'] = true;
+  }
+  if(givenCap['Tunnel_Name']) {
+    returnCap['Tunnel_Name'] = givenCap['Tunnel_Name'];
+  }
   // if(givenCap[]) {
   //   returnCap['platform'] = givenCap['operatingSystem'];
   // }
