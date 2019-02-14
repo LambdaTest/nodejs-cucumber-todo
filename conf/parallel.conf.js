@@ -18,18 +18,34 @@ exports.config = {
     browserName: 'chrome',
     platform: 'win10',
     version: "71",
+    visual: true,
+    video: true,
+    console: true,
+    network: true
   },{
     browserName: 'firefox',
     platform: 'win10',
     version: "60",
+    visual: true,
+    video: true,
+    console: true,
+    network: true
   },{
     browserName: 'safari',
     platform: 'macos 10.13',
     version: "11.0",
+    visual: true,
+    video: true,
+    console: true,
+    network: true
   },{
     browserName: 'internet explorer',
     platform: 'win10',
     version: "11",
+    visual: true,
+    video: true,
+    console: true,
+    network: true
   }]
 }
 

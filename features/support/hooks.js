@@ -53,7 +53,7 @@ var myHooks = function () {
 // Mapping capabilities
 var getParallelCaps = function (lt_browsers, task_id) {
   var givenCap = lt_browsers[task_id];
-  var returnCap = {name: 'parallel_test', build: 'cucumber-js-lambdatest'};
+  var returnCap = {name: 'parallel_test', build: 'cucumber-js-lambdatest', visual: true, video: true, console: true, network: true};
   if(givenCap['operatingSystem']) {
     returnCap['platform'] = givenCap['operatingSystem'];
   }
