@@ -1,3 +1,7 @@
+/*
+Default capabilities to be loaded in single env test if capabilities not exported  
+*/
+
 const lambdaCredentials = require('./cred.conf.js').cred;
 
 exports.config = {
