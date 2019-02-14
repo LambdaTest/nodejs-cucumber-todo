@@ -1,3 +1,10 @@
+/*
+This file contains the code which automate the sample app.
+It reads instructions form feature file and find matching
+case and execute it.
+*/
+
+
 'use strict';
 
 var assert = require('cucumber-assert');

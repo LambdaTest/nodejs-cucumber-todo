@@ -2,26 +2,24 @@
 
 var webdriver = require('selenium-webdriver');
 var config_file = '../../conf/' + (process.env.CONFIG_FILE || 'single') + '.conf.js';
-if(process.env.LT_BROWSERS) {
-  config_file = '../../conf/parallel.conf.js';
-}
+var config = require(config_file).config;
 
-//remove unwanted characters from jenkins json
+//remove unwanted characters from json
 var getValidJson = function(jenkinsInput) {
-  var json = process.env.LT_BROWSERS;
+  var json = jenkinsInput;
   json = json.replace(/\\n/g, "");
   json = json.replace('\\/g', '');
   return json;
 };
 
-var config = require(config_file).config;
-
+//When running parallel test capabilities data will come in `process.env.LT_BROWSERS` key
 var lt_browsers = null;
 if(process.env.LT_BROWSERS) {
   var jsonInput = getValidJson(process.env.LT_BROWSERS);
   lt_browsers = JSON.parse(jsonInput);
 }
 
+// create selenium session
 var createLTSession = function(config, caps){
   console.log('capabilities', caps);
   console.log('selenium address:', config.server);
