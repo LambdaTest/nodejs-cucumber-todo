@@ -1,7 +1,7 @@
 ![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
 ---
 
-# Cucumber JS
+# nodejs-cucumber-todo
 [Cucumber JS](https://www.npmjs.com/package/selenium-cucumber-js) with LambdaTest
 
 
