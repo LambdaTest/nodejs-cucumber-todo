@@ -2,14 +2,14 @@
 ---
 
 # nodejs-cucumber-todo
-[Cucumber JS](https://www.npmjs.com/package/selenium-cucumber-js) with LambdaTest
+[Cucumber JS](https://www.npmjs.com/package/selenium-cucumber-js) integration with LambdaTest
 
 
 ### Local Setup
 - Clone Repository
 - Install dependencies by running command
 ```npm install```
-- Add `username` and `accesskey` in `cred.conf.js` file.
+- Add `username` and `accesskey` in `cred.conf.js` file located in conf folder.
 ```
 exports.cred = {
 	username: process.env.LT_USERNAME || 'YOUR_USERNAME',
