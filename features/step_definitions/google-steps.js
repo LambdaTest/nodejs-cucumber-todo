@@ -1,7 +1,7 @@
 'use strict';
 
-var assert = require('cucumber-assert');
-var webdriver = require('selenium-webdriver');
+const assert = require('cucumber-assert');
+const webdriver = require('selenium-webdriver');
 
 module.exports = function() {
 
@@ -12,7 +12,7 @@ module.exports = function() {
   });
 
   this.Then(/^I submit$/, function (next) {
-    var self = this;
+    let self = this;
     this.driver.findElement({ name: 'btnK' })
       .click()
       .then(function() {

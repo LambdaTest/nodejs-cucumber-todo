@@ -1,26 +1,26 @@
 'use strict';
 
-var webdriver = require('selenium-webdriver');
-var config_file = '../../conf/' + (process.env.CONFIG_FILE || 'single') + '.conf.js';
-var config = require(config_file).config;
+const webdriver = require('selenium-webdriver');
+const config_file = '../../conf/' + (process.env.CONFIG_FILE || 'single') + '.conf.js';
+const config = require(config_file).config;
 
 //remove unwanted characters from json
-var getValidJson = function(jenkinsInput) {
-  var json = jenkinsInput;
+const getValidJson = function(jenkinsInput) {
+  let json = jenkinsInput;
   json = json.replace(/\\n/g, "");
   json = json.replace('\\/g', '');
   return json;
 };
 
 //When running parallel test capabilities data will come in `process.env.LT_BROWSERS` key
-var lt_browsers = null;
+let lt_browsers = null;
 if(process.env.LT_BROWSERS) {
-  var jsonInput = getValidJson(process.env.LT_BROWSERS);
+  let jsonInput = getValidJson(process.env.LT_BROWSERS);
   lt_browsers = JSON.parse(jsonInput);
 }
 
 // create selenium session
-var createLTSession = function(config, caps){
+const createLTSession = function(config, caps){
   console.log('capabilities', caps);
   console.log('selenium address:', config.server);
   return new webdriver.Builder().
@@ -29,11 +29,11 @@ var createLTSession = function(config, caps){
     build();
 }
 
-var myHooks = function () {
+const myHooks = function () {
   this.Before(function (scenario, callback) {
-    var world = this;
-    var task_id = parseInt(process.env.TASK_ID || 0);
-    var caps;
+    let world = this;
+    let task_id = parseInt(process.env.TASK_ID || 0);
+    let caps;
     if(lt_browsers) {
       caps = getParallelCaps(lt_browsers, task_id);
     } else {
@@ -51,9 +51,9 @@ var myHooks = function () {
 };
 
 // Mapping capabilities
-var getParallelCaps = function (lt_browsers, task_id) {
-  var givenCap = lt_browsers[task_id];
-  var returnCap = {name: 'parallel_test', build: 'cucumber-js-lambdatest', visual: true, video: true, console: true, network: true};
+const getParallelCaps = function (lt_browsers, task_id) {
+  let givenCap = lt_browsers[task_id];
+  let returnCap = {name: 'parallel_test', build: 'cucumber-js-lambdatest', visual: true, video: true, console: true, network: true};
   if(givenCap['operatingSystem']) {
     returnCap['platform'] = givenCap['operatingSystem'];
   }
@@ -72,15 +72,6 @@ var getParallelCaps = function (lt_browsers, task_id) {
   if(givenCap['Tunnel_Name']) {
     returnCap['Tunnel_Name'] = givenCap['Tunnel_Name'];
   }
-  // if(givenCap[]) {
-  //   returnCap['platform'] = givenCap['operatingSystem'];
-  // }
-  // if(givenCap[]) {
-  //   returnCap['platform'] = givenCap['operatingSystem'];
-  // }
-  // if(givenCap[]) {
-  //   returnCap['platform'] = givenCap['operatingSystem'];
-  // }
   return returnCap;
 };
 

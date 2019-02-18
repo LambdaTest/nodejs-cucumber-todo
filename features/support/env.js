@@ -1,6 +1,6 @@
 'use strict';
 
-var configure = function () {
+let configure = function () {
     this.setDefaultTimeout(180 * 1000);
 };
 

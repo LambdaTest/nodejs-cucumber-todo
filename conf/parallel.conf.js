@@ -18,10 +18,10 @@ exports.config = {
     browserName: 'chrome',
     platform: 'win10',
     version: "71",
-    visual: true,
-    video: true,
-    console: true,
-    network: true
+    visual: true,// if true screenshots will be captured
+    video: true, // if false video will not generate
+    console: true,// if true console logs will come on automation dashboard
+    network: true // if true network logs will come 
   },{
     browserName: 'firefox',
     platform: 'win10',
@@ -51,6 +51,6 @@ exports.config = {
 
 // Code to support common capabilities
 exports.config.capabilities.forEach(function(caps){
-  for(var i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
+  for(let i in exports.config.commonCapabilities) caps[i] = caps[i] || exports.config.commonCapabilities[i];
 });
 

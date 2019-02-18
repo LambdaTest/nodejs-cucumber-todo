@@ -7,8 +7,8 @@ case and execute it.
 
 'use strict';
 
-var assert = require('cucumber-assert');
-var webdriver = require('selenium-webdriver');
+const assert = require('cucumber-assert');
+const webdriver = require('selenium-webdriver');
 
 module.exports = function() {
 
