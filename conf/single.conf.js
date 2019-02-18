@@ -15,7 +15,7 @@ exports.config = {
     platform: process.env.LT_PLATFORM || "win8",
     version: process.env.LT_BROWSER_VERSION || "71",
     resolution: process.env.LT_RESOLUTION || "1024x768",
-    tunnel: process.env.tunnel ? true : false,
+    tunnel: (process.env.LT_TUNNEL_NAME != "" && process.env.LT_TUNNEL_NAME != undefined) ? true : false,
     visual: true,
     video: true,
     console: true,

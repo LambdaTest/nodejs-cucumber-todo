@@ -66,11 +66,9 @@ const getParallelCaps = function (lt_browsers, task_id) {
   if(givenCap['resolution']) {
     returnCap['resolution'] = givenCap['resolution'];
   }
-  if(givenCap['tunnel']) {
+  if(process.env.LT_TUNNEL_NAME != "" && process.env.LT_TUNNEL_NAME != undefined) {
     returnCap['tunnel'] = true;
-  }
-  if(givenCap['Tunnel_Name']) {
-    returnCap['Tunnel_Name'] = givenCap['Tunnel_Name'];
+    returnCap['TunnelName'] = process.env.LT_TUNNEL_NAME;
   }
   return returnCap;
 };
