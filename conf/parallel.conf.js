@@ -18,10 +18,10 @@ exports.config = {
     browserName: 'chrome',
     platform: 'win10',
     version: "71",
-    visual: true,// if true screenshots will be captured
+    visual: false,// if true screenshots will be captured
     video: true, // if false video will not generate
-    console: true,// if true console logs will come on automation dashboard
-    network: true // if true network logs will come 
+    console: false,// if true console logs will come on automation dashboard
+    network: false // if true network logs will come 
   },{
     browserName: 'firefox',
     platform: 'win10',
