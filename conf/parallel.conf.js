@@ -26,26 +26,26 @@ exports.config = {
     browserName: 'firefox',
     platform: 'win10',
     version: "60",
-    visual: true,
+    visual: false,
     video: true,
-    console: true,
-    network: true
+    console: false,
+    network: false
   },{
     browserName: 'safari',
     platform: 'macos 10.13',
     version: "11.0",
-    visual: true,
+    visual: false,
     video: true,
-    console: true,
-    network: true
+    console: false,
+    network: false
   },{
     browserName: 'internet explorer',
     platform: 'win10',
     version: "11",
-    visual: true,
+    visual: false,
     video: true,
-    console: true,
-    network: true
+    console: false,
+    network: false
   }]
 }
 
