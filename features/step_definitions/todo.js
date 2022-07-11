@@ -13,7 +13,7 @@ const webdriver = require('selenium-webdriver');
 module.exports = function() {
 
   this.When(/^visit url "([^"]*)"$/, function (url, next) {
-    this.driver.get('https://lambdatest.github.io/sample-todo-app').then(next);
+    this.driver.get(url).then(next);
   });
 
   this.When(/^field with name "First Item" is present check the box$/, function (next) {

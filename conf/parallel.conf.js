@@ -25,15 +25,15 @@ exports.config = {
   },{
     browserName: 'firefox',
     platform: 'win10',
-    version: "60",
+    version: "100",
     visual: false,
     video: true,
     console: false,
     network: false
   },{
     browserName: 'safari',
-    platform: 'macos 10.13',
-    version: "11.0",
+    platform: 'MacOS Monterey',
+    version: "15.0",
     visual: false,
     video: true,
     console: false,

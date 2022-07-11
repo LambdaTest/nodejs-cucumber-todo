@@ -8,6 +8,7 @@
 
 ### Local Setup
 - Clone Repository
+- cd ```nodejs-cucumber-todo```
 - Install dependencies by running command
 ```npm install```
 - Add `username` and `accesskey` in `cred.conf.js` file located in conf folder.
