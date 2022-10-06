@@ -1,4 +1,4 @@
-![LambdaTest Logo](https://www.lambdatest.com/static/images/logo.svg)
+![LambdaTest Logo](https://www.lambdatest.com/resources/images/logos/logo.svg)
 ---
 
 # Nodejs Cucumber todo List
