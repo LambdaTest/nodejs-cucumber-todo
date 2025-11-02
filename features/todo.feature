@@ -5,4 +5,4 @@ Feature: Automate a website
       When field with name "Second Item" is present check the box
       When select the textbox add "Let's add new to do item" in the box
       Then click the "addbutton"
-      Then I must see title "Sample page - lambdatest.com"
+      Then I must see title "Modern To-Do App | LambdaTest"

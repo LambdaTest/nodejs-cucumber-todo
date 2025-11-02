@@ -17,7 +17,7 @@ exports.config = {
   capabilities: [{
     browserName: 'chrome',
     platform: 'win10',
-    version: "71",
+    version: "85",
     visual: false,// if true screenshots will be captured
     video: true, // if false video will not generate
     console: false,// if true console logs will come on automation dashboard

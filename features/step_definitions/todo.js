@@ -1,44 +1,38 @@
-/*
-This file contains the code which automate the sample app.
-It reads instructions form feature file and find matching
-case and execute it.
-*/
-
-
 'use strict';
 
-const assert = require('cucumber-assert');
-const webdriver = require('selenium-webdriver');
+const assert = require('assert');
+const { When, Then } = require('@cucumber/cucumber');
 
-module.exports = function() {
+When('visit url {string}', async function (url) {
+  await this.driver.get(url);
+});
 
-  this.When(/^visit url "([^"]*)"$/, function (url, next) {
-    this.driver.get(url).then(next);
-  });
+When('field with name "First Item" is present check the box', async function () {
+  const checkbox = await this.driver.findElement({ name: 'li1' });
+  await checkbox.click();
+});
 
-  this.When(/^field with name "First Item" is present check the box$/, function (next) {
-      this.driver.findElement({ name: 'li1' })
-      .click().then(next);
-  });
+When('field with name "Second Item" is present check the box', async function () {
+  const checkbox = await this.driver.findElement({ name: 'li3' });
+  await checkbox.click();
+});
 
-  this.When(/^field with name "Second Item" is present check the box$/, function (next) {
-      this.driver.findElement({ name: 'li3' })
-      .click().then(next);
-  });
+When('select the textbox add {string} in the box', async function (text) {
+  const textbox = await this.driver.findElement({ id: 'sampletodotext' });
+  await textbox.click();
+  await textbox.sendKeys(text);
+});
 
-  this.When(/^select the textbox add "([^"]*)" in the box$/, function (text, next) {
-      this.driver.findElement({ id: 'sampletodotext' }).click();
-      this.driver.findElement({ id: 'sampletodotext' }).sendKeys(text).then(next);
-  });
+Then('click the {string}', async function (buttonId) {
+  const btn = await this.driver.findElement({ id: buttonId });
+  await btn.click();
+});
 
-  this.Then(/^click the "([^"]*)"$/, function (button, next) {
-    this.driver.findElement({ id: button }).click().then(next);
-  });
-
-  this.Then(/^I must see title "([^"]*)"$/, function (titleMatch, next) {
-    this.driver.getTitle()
-      .then(function(title) {
-        assert.equal(title, titleMatch, next, 'Expected title to be ' + titleMatch);
-      });
-  });
-};
+Then('I must see title {string}', async function (expectedTitle) {
+  const actualTitle = await this.driver.getTitle();
+  assert.strictEqual(
+    actualTitle,
+    expectedTitle,
+    `Expected title to be "${expectedTitle}", but got "${actualTitle}"`
+  );
+});
