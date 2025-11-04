@@ -13,7 +13,7 @@ exports.config = {
     name: process.env.LT_BUILD_NUMBER || "single-test",
     build: process.env.LT_BUILD_NAME || "cucumberjs-lambdatest",
     platform: process.env.LT_PLATFORM || "win10",
-    version: process.env.LT_BROWSER_VERSION || "85",
+    version: process.env.LT_BROWSER_VERSION || "142",
     resolution: process.env.LT_RESOLUTION || "1024x768",
     tunnel: (process.env.LT_TUNNEL_NAME != "" && process.env.LT_TUNNEL_NAME != undefined) ? true : false,
     visual: false,
