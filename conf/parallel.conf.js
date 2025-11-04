@@ -17,7 +17,7 @@ exports.config = {
   capabilities: [{
     browserName: 'chrome',
     platform: 'win10',
-    version: "71",
+    version: "latest",
     visual: false,// if true screenshots will be captured
     video: true, // if false video will not generate
     console: false,// if true console logs will come on automation dashboard
@@ -25,15 +25,15 @@ exports.config = {
   },{
     browserName: 'firefox',
     platform: 'win10',
-    version: "100",
+    version: "latest",
     visual: false,
     video: true,
     console: false,
     network: false
   },{
     browserName: 'safari',
-    platform: 'MacOS Monterey',
-    version: "15.0",
+    platform: 'MacOS Sonoma',
+    version: "latest",
     visual: false,
     video: true,
     console: false,
@@ -41,7 +41,7 @@ exports.config = {
   },{
     browserName: 'internet explorer',
     platform: 'win10',
-    version: "11",
+    version: "latest",
     visual: false,
     video: true,
     console: false,
