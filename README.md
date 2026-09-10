@@ -13,7 +13,7 @@
 With TestMu AI (Formerly LambdaTest), you can run Cucumber.js tests with Selenium across real browsers and operating systems. This sample shows how to integrate Node.js Cucumber with the TestMu AI cloud for cross-browser automation testing.
 
 - [Sign up on TestMu AI](https://www.testmuai.com/register/) (Formerly LambdaTest).
-- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/) for the full setup walkthrough.
+- Follow the [TestMu AI Documentation](https://www.testmuai.com/support/docs/cucumberjs-with-selenium-running-cucumberjs-automation-scripts-on-testmu-selenium-grid/) for the full setup walkthrough.
 
 ### Prerequisites
 
